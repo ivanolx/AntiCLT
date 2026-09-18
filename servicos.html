@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti CLT - Serviços Mais Buscados</title>
+    <link rel="stylesheet" href="servicosstyle.css">
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header / Navegação -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-hard-hat"></i></span>
+                <span class="logo-text">ANTI CLT</span>
+            </div>
+            
+            <nav class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="servicos.html" class="active">Serviços</a>
+                <a href="comofunciona.html">Como Funciona</a>
+            </nav>
+
+            <div class="nav-action">
+                <a href="#" class="btn-login">Login</a>
+                <a href="cadastro.html" class="btn-cadastre">Cadastre-se</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container com Filtros e Listagem -->
+    <div class="main-layout container">
+        
+        <!-- Sidebar de Filtros -->
+        <aside class="filters-sidebar">
+            <h3 class="filter-title">Filtros</h3>
+            
+            <div class="filter-group">
+                <h4>CATEGORIAS</h4>
+                <ul>
+                    <li><a href="#" class="active-cat">Todos os Serviços</a></li>
+                    <li><a href="#">Reparos Residenciais</a></li>
+                    <li><a href="#">Jardinagem & Área Externa</a></li>
+                    <li><a href="#">Assistência Técnica</a></li>
+                    <li><a href="#">Pintura & Acabamento</a></li>
+                    <li><a href="#">Limpeza & Diárias</a></li>
+                    <li><a href="#">Fretes & Entregas</a></li>
+                </ul>
+            </div>
+
+            <div class="filter-group">
+                <h4>REGIÃO</h4>
+                <label class="checkbox-label">
+                    <input type="checkbox" checked> São Paulo - SP
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox"> Rio de Janeiro - RJ
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox"> Belo Horizonte - MG
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox"> Porto Alegre - RS
+                </label>
+            </div>
+        </aside>
+
+        <!-- Conteúdo Principal / Serviços -->
+        <main class="services-content-area">
+            <div class="content-header">
+                <h2>Serviços Mais Buscados</h2>
+                <p>Mostrando 6 profissionais em destaque perto de você de forma transparente</p>
+            </div>
+
+            <!-- Grid de Cards de Profissionais -->
+            <div class="services-grid">
+                
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=600" alt="Técnico de Celular">
+                    </div>
+                    <div class="card-info">
+                        <span class="service-tag">TÉCNICO DE CELULAR</span>
+                        <h3>Renato S.</h3>
+                        <div class="card-meta">
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Pinheiros, SP</span>
+                            <span class="rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=600" alt="Corta de Cercas Vivas">
+                    </div>
+                    <div class="card-info">
+                        <span class="service-tag">CORTA DE CERCAS VIVAS</span>
+                        <h3>Carlos M.</h3>
+                        <div class="card-meta">
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Moema, SP</span>
+                            <span class="rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1542013936693-84d4965e49c8?auto=format&fit=crop&q=80&w=600" alt="Instalação de Canos">
+                    </div>
+                    <div class="card-info">
+                        <span class="service-tag">INSTALAÇÃO DE CANOS</span>
+                        <h3>Douglas T.</h3>
+                        <div class="card-meta">
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Lapa, SP</span>
+                            <span class="rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="service-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&q=80&w=600" alt="Pintura Residencial">
+                    </div>
+                    <div class="card-info">
+                        <span class="service-tag">PINTURA RESIDENCIAL</span>
+                        <h3>Lucas A.</h3>
+                        <div class="card-meta">
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Butantã, SP</span>
+                            <span class="rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="service-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=600" alt="Instalação Elétrica">
+                    </div>
+                    <div class="card-info">
+                        <span class="service-tag">INSTALAÇÃO ELÉTRICA</span>
+                        <h3>Sérgio P.</h3>
+                        <div class="card-meta">
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Itaim Bibi, SP</span>
+                            <span class="rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="service-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=600" alt="Diarista de Limpeza">
+                    </div>
+                    <div class="card-info">
+                        <span class="service-tag">DIARISTA DE LIMPEZA</span>
+                        <h3>Mariana L.</h3>
+                        <div class="card-meta">
+                            <span class="location"><i class="fa-solid fa-location-dot"></i> Vila Mariana, SP</span>
+                            <span class="rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Banner CTA Inferior -->
+            <div class="cta-banner">
+                <div class="cta-text">
+                    <h3>Pronto para encontrar trabalho?</h3>
+                    <p>Crie seu perfil em menos de 5 minutos e comece a fechar diárias na sua região ainda hoje.</p>
+                </div>
+                <a href="cadastro.html" class="btn-cta-cadastrar">Quero me Cadastrar</a>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <div class="logo">
+                    <span class="logo-icon"><i class="fa-solid fa-hard-hat"></i></span>
+                    <span class="logo-text">ANTI CLT</span>
+                </div>
+                <p>Conectando profissionais autônomos a serviços rápidos em todo o Brasil. Sem burocracia, sem amarras.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Para Profissionais</h4>
+                <ul>
+                    <li><a href="#">Encontrar Vagas</a></li>
+                    <li><a href="#">Como receber</a></li>
+                    <li><a href="#">Histórias de sucesso</a></li>
+                    <li><a href="#">Segurança</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Para Clientes</h4>
+                <ul>
+                    <li><a href="#">Contratar</a></li>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="#">Garantias</a></li>
+                    <li><a href="#">Empresas</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Siga-nos</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container bottom-flex">
+                <p>&copy; 2026 ANTI CLT. Feito por trabalhadores, para trabalhadores.</p>
+                <div class="legal-links">
+                    <a href="#">Termos de Serviço</a>
+                    <a href="#">Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

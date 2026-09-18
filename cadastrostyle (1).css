@@ -1,0 +1,269 @@
+/* Reset e Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #F8F6F0;
+    color: #1A1A1A;
+    line-height: 1.5;
+}
+
+/* Navbar alinhada com Grid */
+.navbar {
+    background-color: #F8F6F0;
+    border-bottom: 1px solid #EAE6DF;
+    padding: 16px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #1A1A1A;
+}
+
+.logo-icon {
+    background-color: #FF5426;
+    color: white;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    justify-content: flex-start;
+    padding-left: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #FF5426;
+}
+
+.nav-action {
+    display: flex;
+    align-items: center;
+}
+
+.btn-login {
+    background-color: #FF5426;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-login:hover {
+    background-color: #e0451d;
+}
+
+/* Main Layout Cadastro */
+.cadastro-main {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cadastro-container {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* Coluna Esquerda (Intro) */
+.cadastro-intro {
+    flex: 1;
+    padding-top: 20px;
+}
+
+.cadastro-intro h1 {
+    font-size: 38px;
+    font-weight: 800;
+    color: #111;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.cadastro-intro p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.intro-image-wrapper {
+    width: 100%;
+    height: 340px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #EAE6DF;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+.intro-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Coluna Direita (Form Card) */
+.cadastro-form-card {
+    flex: 1;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #EAE6DF;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+.cadastro-form-card h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 24px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.form-group label .optional {
+    font-weight: 400;
+    color: #888;
+    font-size: 11px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #EAE6DF;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    background-color: #FAFAFA;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #FF5426;
+    background-color: #FFF;
+}
+
+.form-group input::placeholder {
+    color: #aaa;
+}
+
+/* Upload Box */
+.upload-box {
+    border: 2px dashed #FFD6CC;
+    background-color: #FFFAF8;
+    padding: 24px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.upload-box:hover {
+    background-color: #FFF3F0;
+}
+
+.upload-box i {
+    font-size: 24px;
+    color: #FF5426;
+    margin-bottom: 8px;
+}
+
+.upload-box p {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.upload-box span {
+    font-size: 11px;
+    color: #888;
+}
+
+/* Submit Button */
+.btn-submit {
+    width: 100%;
+    background-color: #FF5426;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #e0451d;
+}
+
+/* Form Footer Link */
+.form-footer-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-footer-link p {
+    font-size: 13px;
+    color: #666;
+}
+
+.form-footer-link a {
+    color: #FF5426;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-footer-link a:hover {
+    text-decoration: underline;
+}
