@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #F8F6F0;
+    background: radial-gradient(circle at top left, #fff3ec 0%, #fdf8f3 25%, #f6efe8 55%, #f2eadf 100%);
     color: #1A1A1A;
     line-height: 1.5;
 }
@@ -20,9 +20,10 @@ body {
 
 /* Navbar com Grid para alinhar perfeitamente como no Figma */
 .navbar {
-    background-color: #F8F6F0;
-    border-bottom: 1px solid #EAE6DF;
+    background: rgba(255, 250, 245, 0.92);
+    border-bottom: 1px solid #F1D6C5;
     padding: 16px 0;
+    backdrop-filter: blur(4px);
 }
 
 .nav-container {
@@ -146,14 +147,14 @@ body {
 }
 
 .search-box {
-    background: white;
+    background: rgba(255, 255, 255, 0.82);
     padding: 8px;
     border-radius: 12px;
     display: flex;
     align-items: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 8px 30px rgba(255, 100, 40, 0.08);
     max-width: 540px;
-    border: 1px solid #EAE6DF;
+    border: 1px solid #F3D9C8;
 }
 
 .search-input-wrapper {
@@ -216,9 +217,9 @@ body {
 /* Value Props Section */
 .value-props {
     padding: 70px 0;
-    background-color: #F8F6F0;
-    border-top: 1px solid #EAE6DF;
-    border-bottom: 1px solid #EAE6DF;
+    background: linear-gradient(180deg, rgba(255, 245, 239, 0.9) 0%, rgba(253, 248, 243, 0.95) 100%);
+    border-top: 1px solid #F2D7C7;
+    border-bottom: 1px solid #F2D7C7;
     text-align: center;
 }
 
@@ -243,11 +244,12 @@ body {
 }
 
 .prop-card {
-    background: white;
+    background: linear-gradient(180deg, #fffdfb 0%, #fff4ee 100%);
     padding: 32px 24px;
     border-radius: 16px;
     text-align: left;
-    border: 1px solid #EAE6DF;
+    border: 1px solid #F4D7C6;
+    box-shadow: 0 6px 18px rgba(255, 108, 52, 0.04);
 }
 
 .prop-icon {
@@ -316,10 +318,10 @@ body {
 }
 
 .cat-card {
-    background: white;
+    background: linear-gradient(180deg, #fffdfb 0%, #fff6f0 100%);
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid #EAE6DF;
+    border: 1px solid #F3D7C7;
     transition: transform 0.2s;
 }
 
