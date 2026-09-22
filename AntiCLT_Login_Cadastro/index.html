@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,8 +16,10 @@
     <header class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <span class="logo-icon"><i class="fa-solid fa-hard-hat"></i></span>
-                <span class="logo-text">ANTI CLT</span>
+                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px;">
+                    <span class="logo-icon"><i class="fa-solid fa-hard-hat"></i></span>
+                    <span class="logo-text">ANTI CLT</span>
+                </a>
             </div>
             
             <nav class="nav-links">
@@ -40,17 +42,13 @@
                 <h1>Encontre diárias<br>na sua área.</h1>
                 <p>Conectamos trabalhadores com oportunidades rápidas, flexíveis e sem burocracia. Escolha a sua área, veja as diárias próximas e comece a trabalhar do seu jeito.</p>
                 
-                <div class="search-box">
+                <!-- Formulário Único de Busca Conectado à Página de Serviços -->
+                <form action="servicos.html" method="GET" class="search-box">
                     <div class="search-input-wrapper">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" placeholder="Em qual área você gostaria de trabalhar hoje? (ex: Eletricista)">
+                        <input type="text" name="busca" placeholder="Em qual área você gostaria de trabalhar hoje? (ex: Eletricista)">
                     </div>
-                    <button class="btn-buscar">Buscar Oportunidades</button>
-                </div>
-                <!-- Exemplo de formulário de busca no Hero da index.html -->
-                <form action="servicos.html" method="GET" class="hero-search-form">
-                    <input type="text" name="busca" placeholder="O que você precisa hoje? Ex: Pintor, Elétrica...">
-                    <button type="submit">Buscar</button>
+                    <button type="submit" class="btn-buscar">Buscar Oportunidades</button>
                 </form>
             </div>
             <div class="hero-image">
@@ -74,7 +72,7 @@
 
             <div class="services-preview-grid">
                 <div class="service-item">
-                    <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="service-icon"><i class="fa-solid fa-broom"></i></div>
                     <h3>Diarista</h3>
                     <p>Limpeza, organização e manutenção.</p>
                 </div>
@@ -136,7 +134,7 @@
 
             <div class="categories-grid">
                 <!-- Card 1 -->
-                <div class="cat-card">
+                <a href="servicos.html?busca=Eletricista" class="cat-card" style="text-decoration: none; color: inherit;">
                     <div class="cat-img">
                         <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=600" alt="Eletricista">
                     </div>
@@ -144,9 +142,9 @@
                         <span>Eletricista</span>
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
-                </div>
+                </a>
                 <!-- Card 2 -->
-                <div class="cat-card">
+                <a href="servicos.html?busca=Encanador" class="cat-card" style="text-decoration: none; color: inherit;">
                     <div class="cat-img">
                         <img src="https://tacontratado.com.br/wp-content/uploads/2021/06/encanador.jpg" alt="Encanador">
                     </div>
@@ -154,9 +152,9 @@
                         <span>Encanador</span>
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
-                </div>
+                </a>
                 <!-- Card 3 -->
-                <div class="cat-card">
+                <a href="servicos.html?busca=Jardineiro" class="cat-card" style="text-decoration: none; color: inherit;">
                     <div class="cat-img">
                         <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=600" alt="Jardineiro">
                     </div>
@@ -164,9 +162,9 @@
                         <span>Jardineiro</span>
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
-                </div>
+                </a>
                 <!-- Card 4 -->
-                <div class="cat-card">
+                <a href="servicos.html?busca=Técnico" class="cat-card" style="text-decoration: none; color: inherit;">
                     <div class="cat-img">
                         <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=600" alt="Técnico de Celular">
                     </div>
@@ -174,7 +172,7 @@
                         <span>Técnico de Celular</span>
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
