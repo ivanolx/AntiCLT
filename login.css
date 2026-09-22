@@ -183,6 +183,16 @@ body {
     text-decoration: underline;
 }
 
+.link-highlight {
+    color: #ff6b00;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link-highlight:hover {
+    text-decoration: underline;
+}
+
 .back-home {
     display: inline-flex;
     align-items: center;
