@@ -113,6 +113,7 @@ body {
 
 /* Hero Section */
 .hero-section {
+    background-color: #f5ebe6;
     padding: 60px 0 80px 0;
 }
 
@@ -249,7 +250,7 @@ body {
 
 .service-item {
     background: linear-gradient(180deg, #fffdfb 0%, #fff4ee 100%);
-    border: 1px solid #F3D7C7;
+    border: 1px solid #f1c3a9;
     border-radius: 16px;
     padding: 28px 20px;
     box-shadow: 0 6px 18px rgba(255, 108, 52, 0.04);
