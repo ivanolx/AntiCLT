@@ -1,0 +1,56 @@
+[
+  {
+    "categoria": "tecnico",
+    "servico": "Técnico de Celular",
+    "profissional": "Renato S.",
+    "regiao": "SP",
+    "local": "Pinheiros, SP",
+    "nota": 4.9,
+    "imagem": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=600"
+  },
+  {
+    "categoria": "jardinagem",
+    "servico": "Corta de Cercas Vivas",
+    "profissional": "Carlos M.",
+    "regiao": "SP",
+    "local": "Moema, SP",
+    "nota": 4.9,
+    "imagem": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=600"
+  },
+  {
+    "categoria": "reparos",
+    "servico": "Instalação de Canos",
+    "profissional": "Douglas T.",
+    "regiao": "RJ",
+    "local": "Lapa, RJ",
+    "nota": 4.9,
+    "imagem": "https://images.unsplash.com/photo-1542013936693-84d4965e49c8?auto=format&fit=crop&q=80&w=600"
+  },
+  {
+    "categoria": "pintura",
+    "servico": "Pintura Residencial",
+    "profissional": "Lucas A.",
+    "regiao": "MG",
+    "local": "Butantã, MG",
+    "nota": 4.9,
+    "imagem": "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&q=80&w=600"
+  },
+  {
+    "categoria": "reparos",
+    "servico": "Instalação Elétrica",
+    "profissional": "Sérgio P.",
+    "regiao": "SP",
+    "local": "Itaim Bibi, SP",
+    "nota": 4.9,
+    "imagem": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=600"
+  },
+  {
+    "categoria": "limpeza",
+    "servico": "Diarista de Limpeza",
+    "profissional": "Mariana L.",
+    "regiao": "RS",
+    "local": "Vila Mariana, RS",
+    "nota": 4.9,
+    "imagem": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=600"
+  }
+]

@@ -1,78 +1,117 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const searchInput = document.getElementById('search-input');
     const categoryLinks = document.querySelectorAll('.cat-filter');
     const regionCheckboxes = document.querySelectorAll('.region-filter');
-    const serviceCards = document.querySelectorAll('.service-card');
+    const servicesGrid = document.getElementById('services-grid');
     const resultsCount = document.getElementById('results-count');
 
     let selectedCategory = 'todos';
+    let serviceCards = [];
 
-    // 1. Verificar se veio alguma busca pela URL (Ex: servicos.html?busca=eletricista)
-    const urlParams = new URLSearchParams(window.location.search);
-    const searchParam = urlParams.get('busca');
+    function createServiceCard(service) {
+        const card = document.createElement('div');
+        card.className = 'service-card';
+        card.dataset.category = service.categoria;
+        card.dataset.location = service.regiao;
 
-    if (searchParam && searchInput) {
-        searchInput.value = searchParam;
+        const cardImage = document.createElement('div');
+        cardImage.className = 'card-img';
+
+        const image = document.createElement('img');
+        image.src = service.imagem;
+        image.alt = service.servico;
+        cardImage.appendChild(image);
+
+        const cardInfo = document.createElement('div');
+        cardInfo.className = 'card-info';
+
+        const tag = document.createElement('span');
+        tag.className = 'service-tag';
+        tag.textContent = service.servico.toUpperCase();
+
+        const professional = document.createElement('h3');
+        professional.textContent = service.profissional;
+
+        const cardMeta = document.createElement('div');
+        cardMeta.className = 'card-meta';
+
+        const location = document.createElement('span');
+        location.className = 'location';
+        location.innerHTML = '<i class="fa-solid fa-location-dot"></i> ';
+        location.append(service.local);
+
+        const rating = document.createElement('span');
+        rating.className = 'rating';
+        rating.innerHTML = '<i class="fa-solid fa-star"></i> ';
+        rating.append(service.nota);
+
+        cardMeta.append(location, rating);
+        cardInfo.append(tag, professional, cardMeta);
+        card.append(cardImage, cardInfo);
+
+        return card;
     }
 
-    // 2. Função Principal de Filtragem
     function filterServices() {
         const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
-        
-        // Obter regiões marcadas
         const selectedRegions = Array.from(regionCheckboxes)
-            .filter(cb => cb.checked)
-            .map(cb => cb.value);
-
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value);
         let visibleCount = 0;
 
         serviceCards.forEach(card => {
-            const cardCategory = card.getAttribute('data-category');
-            const cardLocation = card.getAttribute('data-location');
-            const cardText = card.innerText.toLowerCase();
-
-            // Regras de validação
-            const matchesCategory = (selectedCategory === 'todos' || cardCategory === selectedCategory);
+            const cardText = card.textContent.toLowerCase();
+            const matchesCategory = selectedCategory === 'todos'
+                || card.dataset.category === selectedCategory;
             const matchesSearch = cardText.includes(searchTerm);
-            const matchesRegion = selectedRegions.length === 0 || selectedRegions.includes(cardLocation);
+            const matchesRegion = selectedRegions.length === 0
+                || selectedRegions.includes(card.dataset.location);
+            const isVisible = matchesCategory && matchesSearch && matchesRegion;
 
-            // Exibir ou Ocultar Card
-            if (matchesCategory && matchesSearch && matchesRegion) {
-                card.style.display = 'block';
+            card.style.display = isVisible ? '' : 'none';
+            if (isVisible) {
                 visibleCount++;
-            } else {
-                card.style.display = 'none';
             }
         });
 
-        // Atualizar contador de resultados
         if (resultsCount) {
             resultsCount.textContent = `Mostrando ${visibleCount} profissional(is) encontrado(s)`;
         }
     }
 
-    // 3. Eventos dos Filtros de Categoria
     categoryLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            categoryLinks.forEach(l => l.classList.remove('active-cat'));
+        link.addEventListener('click', event => {
+            event.preventDefault();
+            categoryLinks.forEach(categoryLink => categoryLink.classList.remove('active-cat'));
             link.classList.add('active-cat');
-
-            selectedCategory = link.getAttribute('data-category');
+            selectedCategory = link.dataset.category;
             filterServices();
         });
     });
 
-    // 4. Eventos do Campo de Texto e Checkboxes
-    if (searchInput) {
-        searchInput.addEventListener('input', filterServices);
+    searchInput?.addEventListener('input', filterServices);
+    regionCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterServices));
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchParam = urlParams.get('busca');
+    if (searchParam && searchInput) {
+        searchInput.value = searchParam;
     }
 
-    regionCheckboxes.forEach(cb => {
-        cb.addEventListener('change', filterServices);
-    });
+    try {
+        const response = await fetch('servicos.json');
+        if (!response.ok) {
+            throw new Error(`Falha ao carregar serviços: ${response.status}`);
+        }
 
-    // Executar filtragem inicial para aplicar buscas vindas da index.html
-    filterServices();
+        const services = await response.json();
+        services.forEach(service => servicesGrid.appendChild(createServiceCard(service)));
+        serviceCards = Array.from(servicesGrid.querySelectorAll('.service-card'));
+        filterServices();
+    } catch (error) {
+        console.error(error);
+        if (resultsCount) {
+            resultsCount.textContent = 'Não foi possível carregar os serviços.';
+        }
+    }
 });
