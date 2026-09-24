@@ -1,0 +1,491 @@
+/* Reset e Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #F8F6F0;
+    color: #1A1A1A;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar alinhada com Grid */
+.navbar {
+    background-color: #F8F6F0;
+    border-bottom: 1px solid #EAE6DF;
+    padding: 16px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #1A1A1A;
+}
+
+.logo-icon {
+    background-color: #FF5426;
+    color: white;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    justify-content: flex-start;
+    padding-left: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    color: #FF5426;
+}
+
+.nav-action {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.btn-login {
+    background-color: #FF5426;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-login:hover {
+    background-color: #e0451d;
+}
+
+.btn-cadastre {
+    background-color: #FF5426;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-cadastre:hover {
+    background-color: #e0451d;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 60px 0 80px 0;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.badge {
+    background-color: #FFF2EE;
+    color: #FF5426;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 32px;
+    max-width: 520px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.circle-image-wrapper {
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 8px solid white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.circle-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Steps Section */
+.steps-section {
+    padding: 80px 0;
+    background-color: white;
+    border-top: 1px solid #EAE6DF;
+    border-bottom: 1px solid #EAE6DF;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-header {
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    font-size: 15px;
+    color: #666;
+}
+
+.steps-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.step-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.step-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.step-img {
+    flex: 1;
+    height: 320px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #EAE6DF;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+}
+
+.step-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.step-text {
+    flex: 1;
+}
+
+.step-tag {
+    font-size: 12px;
+    font-weight: 700;
+    color: #FF5426;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.step-text h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 12px;
+}
+
+.step-text p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Guarantees Section */
+.guarantees-section {
+    padding: 90px 0;
+    background-color: #F8F6F0;
+}
+
+.section-subtitle {
+    font-size: 15px;
+    color: #666;
+    max-width: 600px;
+    margin: 10px auto 50px auto;
+}
+
+.guarantees-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.guarantee-card {
+    background: white;
+    padding: 30px 24px;
+    border-radius: 16px;
+    border: 1px solid #EAE6DF;
+    text-align: left;
+}
+
+.guarantee-card h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #FF5426;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.card-small {
+    font-size: 11px;
+    font-weight: 600;
+    color: #888;
+    letter-spacing: 0.5px;
+}
+
+.guarantee-card p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Dark CTA Section */
+.cta-dark-section {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.cta-box {
+    background-color: #111;
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    color: white;
+}
+
+.badge-dark {
+    background-color: #222;
+    color: #FF5426;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+}
+
+.cta-box h2 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.cta-box p {
+    font-size: 15px;
+    color: #999;
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.btn-primary-orange {
+    background-color: #FF5426;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.btn-primary-orange:hover {
+    background-color: #e0451d;
+}
+
+.btn-outline-dark {
+    background-color: transparent;
+    color: white;
+    border: 2px solid #444;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.btn-outline-dark:hover {
+    border-color: white;
+}
+
+/* Footer */
+.footer {
+    background-color: #111;
+    color: #aaa;
+    padding: 60px 0 20px 0;
+    border-top: 1px solid #222;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.brand-col .logo-text {
+    color: white;
+}
+
+.brand-col p {
+    margin-top: 16px;
+    font-size: 14px;
+    max-width: 280px;
+    color: #888;
+}
+
+.footer-col h4 {
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #888;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+    color: #FF5426;
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icons a {
+    width: 36px;
+    height: 36px;
+    background-color: #222;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.social-icons a:hover {
+    background-color: #FF5426;
+}
+
+.footer-bottom {
+    border-top: 1px solid #222;
+    padding-top: 20px;
+}
+
+.bottom-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #777;
+}
+
+.legal-links {
+    display: flex;
+    gap: 20px;
+}
+
+.legal-links a {
+    color: #777;
+    text-decoration: none;
+}
+
+.legal-links a:hover {
+    color: white;
+}

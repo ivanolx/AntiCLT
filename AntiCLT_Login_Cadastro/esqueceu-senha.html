@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti CLT - Recuperar Senha</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="auth-container">
+        <!-- Cabeçalho -->
+        <div class="auth-header">
+            <div class="logo">
+                <i class="fa-solid fa-hard-hat"></i>
+                <span>ANTI CLT</span>
+            </div>
+            <h2>Recuperar senha</h2>
+            <p>Digite seu e-mail cadastrado e enviaremos um link de redefinição.</p>
+        </div>
+
+        <!-- Formulário de Recuperação -->
+        <form class="auth-form" action="#" method="POST">
+            <div class="input-group">
+                <label for="recovery-email">E-mail cadastrado</label>
+                <div class="input-wrapper">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="recovery-email" placeholder="seu@email.com" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-primary">Enviar link de recuperação</button>
+        </form>
+
+        <!-- Rodapé -->
+        <div class="auth-footer">
+            <a href="login.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Voltar para o Login</a>
+        </div>
+    </div>
+
+</body>
+</html>
