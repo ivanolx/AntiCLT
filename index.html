@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,8 +16,10 @@
     <header class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <span class="logo-icon"><i class="fa-solid fa-hard-hat"></i></span>
-                <span class="logo-text">ANTI CLT</span>
+                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px;">
+                    <span class="logo-icon"><i class="fa-solid fa-hard-hat"></i></span>
+                    <span class="logo-text">ANTI CLT</span>
+                </a>
             </div>
             
             <nav class="nav-links">
@@ -27,7 +29,7 @@
             </nav>
 
             <div class="nav-action">
-                <a href="#" class="btn-login">Login</a>
+                <a href="login.html" class="btn-login">Login</a>
                 <a href="cadastro.html" class="btn-cadastre">Cadastre-se</a>
             </div>
         </div>
@@ -37,20 +39,57 @@
     <section class="hero-section">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Encontre trabalho.<br>Sem burocracia.</h1>
-                <p>Conectamos profissionais qualificados a serviços rápidos e diárias de forma direta. Sem contratos formais, com pagamento garantido e flexibilidade total.</p>
+                <h1>Encontre diárias<br>na sua área.</h1>
+                <p>Conectamos trabalhadores com oportunidades rápidas, flexíveis e sem burocracia. Escolha a sua área, veja as diárias próximas e comece a trabalhar do seu jeito.</p>
                 
-                <div class="search-box">
+                <!-- Formulário Único de Busca Conectado à Página de Serviços -->
+                <form action="servicos.html" method="GET" class="search-box">
                     <div class="search-input-wrapper">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" placeholder="Que tipo de profissional você precisa? (ex: Encanador)">
+                        <input type="text" name="busca" placeholder="Em qual área você gostaria de trabalhar hoje? (ex: Eletricista)">
                     </div>
-                    <button class="btn-buscar">Buscar Diária</button>
-                </div>
+                    <button type="submit" class="btn-buscar">Buscar Oportunidades</button>
+                </form>
             </div>
             <div class="hero-image">
                 <div class="circle-image-wrapper">
-                    <img src="https://rogeriogomez.com.br/wp-content/uploads/2018/10/Esp%C3%A9cies-de-Trabalhadores.jpg" alt="Trabalhadores unidos">
+                    <img src="https://i.pinimg.com/736x/7a/5e/f8/7a5ef8a8469292bae8419e11adc46e08.jpg" alt="Trabalhadores unidos">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview Section -->
+    <section class="services-preview">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <span class="eyebrow">Serviços</span>
+                    <h2>O que você pode encontrar</h2>
+                </div>
+                <a href="servicos.html" class="see-all">Ver todos os serviços <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="services-preview-grid">
+                <div class="service-item">
+                    <div class="service-icon"><i class="fa-solid fa-broom"></i></div>
+                    <h3>Diarista</h3>
+                    <p>Limpeza, organização e manutenção.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon"><i class="fa-solid fa-wrench"></i></div>
+                    <h3>Encanador</h3>
+                    <p>Dedetização, encanamento e ajustes.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon"><i class="fa-solid fa-paint-roller"></i></div>
+                    <h3>Pintura</h3>
+                    <p>Acabamentos, reformas e retoques.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                    <h3>Reparos</h3>
+                    <p>Ajuda rápida para problemas do dia a dia.</p>
                 </div>
             </div>
         </div>
@@ -87,15 +126,15 @@
         <div class="container">
             <div class="categories-header">
                 <div>
-                    <h2>Categorias em Destaque</h2>
-                    <p>Encontre os profissionais mais buscados para serviços rápidos hoje mesmo.</p>
+                    <h2>Áreas em Alta</h2>
+                    <p>Descubra os segmentos mais procurados para fechar diárias e serviços rápidos.</p>
                 </div>
-                <a href="servicos.html" class="see-all">Ver todos os serviços <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="servicos.html" class="see-all">Ver todas as áreas <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
             <div class="categories-grid">
                 <!-- Card 1 -->
-                <div class="cat-card">
+                <a href="servicos.html?busca=Eletricista" class="cat-card" style="text-decoration: none; color: inherit;">
                     <div class="cat-img">
                         <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=600" alt="Eletricista">
                     </div>
@@ -103,9 +142,9 @@
                         <span>Eletricista</span>
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
-                </div>
+                </a>
                 <!-- Card 2 -->
-                <div class="cat-card">
+                <a href="servicos.html?busca=Encanador" class="cat-card" style="text-decoration: none; color: inherit;">
                     <div class="cat-img">
                         <img src="https://tacontratado.com.br/wp-content/uploads/2021/06/encanador.jpg" alt="Encanador">
                     </div>
@@ -113,9 +152,9 @@
                         <span>Encanador</span>
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
-                </div>
+                </a>
                 <!-- Card 3 -->
-                <div class="cat-card">
+                <a href="servicos.html?busca=Jardineiro" class="cat-card" style="text-decoration: none; color: inherit;">
                     <div class="cat-img">
                         <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=600" alt="Jardineiro">
                     </div>
@@ -123,9 +162,9 @@
                         <span>Jardineiro</span>
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
-                </div>
+                </a>
                 <!-- Card 4 -->
-                <div class="cat-card">
+                <a href="servicos.html?busca=Técnico" class="cat-card" style="text-decoration: none; color: inherit;">
                     <div class="cat-img">
                         <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=600" alt="Técnico de Celular">
                     </div>
@@ -133,7 +172,7 @@
                         <span>Técnico de Celular</span>
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -151,10 +190,7 @@
             <div class="footer-col">
                 <h4>Para Profissionais</h4>
                 <ul>
-                    <li><a href="#">Encontrar Vagas</a></li>
-                    <li><a href="#">Como receber</a></li>
-                    <li><a href="#">Histórias de sucesso</a></li>
-                    <li><a href="#">Segurança</a></li>
+                    <li><a href="servicos.html">Encontrar Vagas</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -162,8 +198,6 @@
                 <ul>
                     <li><a href="servicos.html">Contratar</a></li>
                     <li><a href="servicos.html">Categorias</a></li>
-                    <li><a href="#">Garantias</a></li>
-                    <li><a href="#">Empresas</a></li>
                 </ul>
             </div>
             <div class="footer-col">
