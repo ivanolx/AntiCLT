@@ -53,7 +53,30 @@ function initializeDatabase() {
                         return;
                     }
 
-                    resolve();
+                    db.run(`
+                        CREATE TABLE IF NOT EXISTS diarias (
+                            id INTEGER PRIMARY KEY AUTOINCREMENT,
+                            categoria TEXT NOT NULL,
+                            servico TEXT NOT NULL,
+                            titulo TEXT NOT NULL,
+                            descricao TEXT NOT NULL,
+                            contratante TEXT NOT NULL,
+                            telefone TEXT NOT NULL,
+                            local TEXT NOT NULL,
+                            regiao TEXT NOT NULL,
+                            data TEXT NOT NULL,
+                            pagamento TEXT NOT NULL,
+                            imagem TEXT NOT NULL,
+                            dataPublicacao TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+                        )
+                    `, (diariaError) => {
+                        if (diariaError) {
+                            reject(diariaError);
+                            return;
+                        }
+
+                        resolve();
+                    });
                 });
             });
         });
@@ -95,6 +118,71 @@ app.post('/api/contatos', (req, res) => {
                 id: this.lastID,
                 message: 'Contato enviado com sucesso.'
             });
+        }
+    );
+});
+
+function validarDiaria(dados) {
+    const categoria = String(dados.categoria || '').trim();
+    const servico = String(dados.servico || '').trim();
+    const titulo = String(dados.titulo || '').trim();
+    const descricao = String(dados.descricao || '').trim();
+    const contratante = String(dados.contratante || 'Anunciante').trim();
+    const telefone = String(dados.telefone || '').trim();
+    const local = String(dados.local || '').trim();
+    const regiao = String(dados.regiao || '').trim();
+    const data = String(dados.data || '').trim();
+    const pagamento = String(dados.pagamento || '').trim();
+
+    if (!categoria || !servico || !titulo || !descricao || !telefone || !local || !regiao || !data || !pagamento) {
+        return false;
+    }
+
+    return {
+        categoria,
+        servico,
+        titulo,
+        descricao,
+        contratante: contratante || 'Anunciante',
+        telefone,
+        local,
+        regiao,
+        data,
+        pagamento,
+        imagem: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=600'
+    };
+}
+
+app.get('/api/diarias', (req, res) => {
+    db.all('SELECT * FROM diarias ORDER BY id DESC', (error, rows) => {
+        if (error) {
+            return res.status(500).json({ error: 'Erro ao listar diárias publicadas.' });
+        }
+
+        res.json(rows);
+    });
+});
+
+app.post('/api/diarias', (req, res) => {
+    const diariaValida = validarDiaria(req.body);
+
+    if (!diariaValida) {
+        return res.status(400).json({ error: 'Preencha todos os campos da diária.' });
+    }
+
+    const { categoria, servico, titulo, descricao, contratante, telefone, local, regiao, data, pagamento, imagem } = diariaValida;
+
+    db.run(
+        `INSERT INTO diarias
+        (categoria, servico, titulo, descricao, contratante, telefone, local, regiao, data, pagamento, imagem, dataPublicacao)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        [categoria, servico, titulo, descricao, contratante, telefone, local, regiao, data, pagamento, imagem, new Date().toISOString()],
+        function (error) {
+            if (error) {
+                return res.status(500).json({ error: 'Erro ao publicar diária.' });
+            }
+
+            res.status(201).json({ id: this.lastID, ...diariaValida });
         }
     );
 });

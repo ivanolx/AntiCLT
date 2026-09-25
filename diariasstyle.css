@@ -120,6 +120,31 @@ body {
     font-size: 16px;
 }
 
+.area-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.area-switcher a {
+    padding: 10px 14px;
+    border: 1px solid #EAE6DF;
+    border-radius: 8px;
+    background: white;
+    color: #555;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.area-switcher a.active,
+.area-switcher a:hover {
+    border-color: #FF5426;
+    background: #FFF2EE;
+    color: #FF5426;
+}
+
 .toolbar {
     display: grid;
     grid-template-columns: minmax(260px, 1fr) 220px 220px;

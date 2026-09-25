@@ -54,9 +54,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        const response = await fetch('diarias.json');
-        if (!response.ok) throw new Error('Não foi possível carregar as diárias.');
-        const diarias = await response.json();
+        const [staticResponse, apiResponse] = await Promise.all([
+            fetch('diarias.json'),
+            fetch('/api/diarias')
+        ]);
+        if (!staticResponse.ok || !apiResponse.ok) throw new Error('Não foi possível carregar as diárias.');
+        const staticDiarias = await staticResponse.json();
+        const publishedDiarias = await apiResponse.json();
+        const diarias = [...publishedDiarias, ...staticDiarias];
+        const searchParam = new URLSearchParams(window.location.search).get('busca');
+        if (searchParam) {
+            searchInput.value = searchParam;
+        }
         renderDiarias(diarias);
         searchInput.addEventListener('input', () => renderDiarias(diarias));
         categorySelect.addEventListener('change', () => renderDiarias(diarias));
