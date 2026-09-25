@@ -163,6 +163,7 @@ body {
     gap: 12px;
     padding-left: 12px;
     flex: 1;
+    min-width: 0;
     color: #888;
 }
 
@@ -170,8 +171,10 @@ body {
     border: none;
     outline: none;
     width: 100%;
+    min-width: 0;
     font-size: 14px;
     color: #333;
+    text-overflow: ellipsis;
 }
 
 .search-input-wrapper input::placeholder {
@@ -184,6 +187,7 @@ body {
     border: none;
     padding: 12px 24px;
     border-radius: 16px;
+    flex-shrink: 0;
     font-weight: 600;
     cursor: pointer;
     transition: background 0.2s;
@@ -191,6 +195,52 @@ body {
 
 .btn-buscar:hover {
     background-color: #e0451d;
+}
+
+@media (max-width: 700px) {
+    .nav-container {
+        grid-template-columns: 1fr auto;
+        gap: 16px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-action .btn-cadastre {
+        display: none;
+    }
+
+    .hero-section {
+        padding: 40px 0 56px;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .search-box {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .search-input-wrapper {
+        min-height: 42px;
+        padding: 0 12px;
+    }
+
+    .btn-buscar {
+        width: 100%;
+    }
+
+    .hero-image {
+        display: none;
+    }
 }
 
 .hero-image {
