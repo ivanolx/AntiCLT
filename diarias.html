@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti CLT - Diárias Disponíveis</title>
+    <link rel="stylesheet" href="diariasstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-icon"><i class="fa-solid fa-hard-hat"></i></span>
+                    <span class="logo-text">ANTI CLT</span>
+                </a>
+            </div>
+
+            <nav class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="diarias.html" class="active">Encontrar Diárias</a>
+                <a href="servicos.html">Profissionais</a>
+                <a href="comofunciona.html">Como Funciona</a>
+            </nav>
+
+            <div class="nav-action">
+                <a href="login.html" class="btn-login">Login</a>
+                <a href="cadastro.html" class="btn-cadastre">Oferecer serviço</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <section class="page-heading">
+            <p class="eyebrow">Para autônomos</p>
+            <h1>Encontre uma diária para fazer</h1>
+            <p>Veja trabalhos publicados por pessoas que precisam de ajuda e escolha o que combina com você.</p>
+        </section>
+
+        <section class="toolbar" aria-label="Filtros de diárias">
+            <label class="search-field">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input id="diarias-search" type="search" placeholder="Buscar por serviço ou bairro">
+            </label>
+            <select id="diarias-category" aria-label="Filtrar por categoria">
+                <option value="todos">Todas as categorias</option>
+                <option value="limpeza">Limpeza e diárias</option>
+                <option value="reparos">Reparos residenciais</option>
+                <option value="jardinagem">Jardinagem</option>
+                <option value="fretes">Fretes e mudanças</option>
+            </select>
+            <select id="diarias-region" aria-label="Filtrar por região">
+                <option value="todas">Todas as regiões</option>
+                <option value="RO">Porto Velho - RO</option>
+                <option value="SP">São Paulo - SP</option>
+                <option value="RJ">Rio de Janeiro - RJ</option>
+            </select>
+        </section>
+
+        <p id="diarias-count" class="results-count">Carregando diárias...</p>
+        <section id="diarias-grid" class="diarias-grid" aria-live="polite"></section>
+    </main>
+
+    <script src="diarias.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+[
+  {
+    "categoria": "limpeza",
+    "servico": "Dedetização Residencial",
+    "titulo": "Preciso de profissional para dedetizar uma casa",
+    "descricao": "Aplicação contra insetos em uma residência de dois quartos.",
+    "contratante": "Marcos A.",
+    "local": "Rua Abunã, 1842 - São Cristóvão, Porto Velho - RO",
+    "regiao": "RO",
+    "data": "28/09/2026",
+    "pagamento": "R$ 220",
+    "imagem": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=600"
+  },
+  {
+    "categoria": "limpeza",
+    "servico": "Lavagem de Caixa d'Água",
+    "titulo": "Lavagem de caixa d'água de uma residência",
+    "descricao": "Limpeza e higienização de uma caixa d'água de 1.000 litros.",
+    "contratante": "Juliana M.",
+    "local": "Rua Daniela, 235 - Aponiã, Porto Velho - RO",
+    "regiao": "RO",
+    "data": "30/09/2026",
+    "pagamento": "R$ 180",
+    "imagem": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&q=80&w=600"
+  },
+  {
+    "categoria": "limpeza",
+    "servico": "Limpeza de Piscina",
+    "titulo": "Limpeza de piscina após evento",
+    "descricao": "Piscina residencial precisa de limpeza completa e tratamento da água.",
+    "contratante": "Paulo H.",
+    "local": "Avenida Calama, 3250 - Embratel, Porto Velho - RO",
+    "regiao": "RO",
+    "data": "01/10/2026",
+    "pagamento": "R$ 160",
+    "imagem": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=600"
+  },
+  {
+    "categoria": "reparos",
+    "servico": "Manutenção Residencial",
+    "titulo": "Pequenos reparos em apartamento",
+    "descricao": "Troca de torneira, instalação de prateleira e ajustes simples.",
+    "contratante": "Fernanda R.",
+    "local": "Rua José Bonifácio, 910 - Centro, Porto Velho - RO",
+    "regiao": "RO",
+    "data": "02/10/2026",
+    "pagamento": "R$ 250",
+    "imagem": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=600"
+  },
+  {
+    "categoria": "jardinagem",
+    "servico": "Limpeza de Quintal",
+    "titulo": "Limpeza e retirada de entulho do quintal",
+    "descricao": "Cortar mato, juntar folhas e organizar o espaço externo.",
+    "contratante": "Carlos R.",
+    "local": "Rua Raimundo Cantuária, 2875 - Agenor de Carvalho, Porto Velho - RO",
+    "regiao": "RO",
+    "data": "03/10/2026",
+    "pagamento": "R$ 200",
+    "imagem": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=600"
+  },
+  {
+    "categoria": "fretes",
+    "servico": "Ajudante de Mudança",
+    "titulo": "Ajudante para mudança no mesmo bairro",
+    "descricao": "Ajudar a carregar móveis e caixas durante meio período.",
+    "contratante": "Renata S.",
+    "local": "Rua Venezuela, 1460 - Nova Porto Velho, Porto Velho - RO",
+    "regiao": "RO",
+    "data": "04/10/2026",
+    "pagamento": "R$ 180",
+    "imagem": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=600"
+  }
+]
