@@ -24,7 +24,7 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 220px 1fr 220px;
     align-items: center;
     gap: 40px;
 }
@@ -52,9 +52,9 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 32px;
-    justify-content: flex-start;
-    padding-left: 40px;
+    gap: 24px;
+    justify-content: center;
+    padding-left: 0;
 }
 
 .nav-links a {
@@ -72,6 +72,7 @@ body {
 .nav-action {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 }
 
 .btn-login {
@@ -266,4 +267,27 @@ body {
 
 .form-footer-link a:hover {
     text-decoration: underline;
+}
+
+.cadastro-message {
+    display: none;
+    margin: 12px 0 16px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.cadastro-message.success {
+    display: block;
+    background: #e9f9ee;
+    color: #17663d;
+    border: 1px solid #bfe8ce;
+}
+
+.cadastro-message.error {
+    display: block;
+    background: #ffe9e7;
+    color: #a52a1c;
+    border: 1px solid #f3c2bc;
 }

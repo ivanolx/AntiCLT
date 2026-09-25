@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti CLT - Cadastros</title>
+    <link rel="stylesheet" href="cadastrosstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-hard-hat"></i></span>
+                <span class="logo-text">ANTI CLT</span>
+            </div>
+
+            <nav class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="diarias.html">Encontrar Diárias</a>
+                <a href="servicos.html">Profissionais</a>
+                <a href="publicar-diaria.html">Publicar Diária</a>
+                <a href="comofunciona.html">Como Funciona</a>
+            </nav>
+
+            <div class="nav-action">
+                <a href="cadastro.html" class="btn-login">Novo cadastro</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="cadastros-main">
+        <div class="cadastros-header">
+            <div>
+                <p class="eyebrow">Painel</p>
+                <h1>Cadastros salvos</h1>
+            </div>
+            <a href="cadastro.html" class="btn-primary">Cadastrar pessoa</a>
+        </div>
+
+        <section class="cadastros-card">
+            <div class="table-wrap">
+                <table id="cadastros-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Endereço</th>
+                            <th>CEP</th>
+                            <th>Telefone</th>
+                            <th>Serviço</th>
+                            <th>Data</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cadastros-body"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

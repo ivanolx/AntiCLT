@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti CLT - Publicar uma Diária</title>
+    <link rel="stylesheet" href="publicardiariastyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-icon"><i class="fa-solid fa-hard-hat"></i></span>
+                    <span class="logo-text">ANTI CLT</span>
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="diarias.html">Encontrar Diárias</a>
+                <a href="servicos.html">Profissionais</a>
+                <a href="publicar-diaria.html" class="active">Publicar Diária</a>
+                <a href="comofunciona.html">Como Funciona</a>
+            </nav>
+            <div class="nav-action">
+                <a href="login.html" class="btn-login">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="publish-page">
+        <section class="publish-intro">
+            <p class="eyebrow">Para quem precisa de ajuda</p>
+            <h1>Publique uma diária</h1>
+            <p>Descreva o trabalho e encontre um profissional autônomo para realizar o serviço. Não é necessário criar uma conta.</p>
+        </section>
+
+        <form id="publish-form" class="publish-form">
+            <div class="form-grid">
+                <div class="field full-width">
+                    <label for="titulo">Título da diária</label>
+                    <input id="titulo" name="titulo" type="text" placeholder="Ex: Preciso limpar um quintal" required>
+                </div>
+                <div class="field">
+                    <label for="servico">Tipo de serviço</label>
+                    <select id="servico" name="servico" required>
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="Dedetização Residencial">Dedetização Residencial</option>
+                        <option value="Lavagem de Caixa d'Água">Lavagem de Caixa d'Água</option>
+                        <option value="Limpeza de Piscina">Limpeza de Piscina</option>
+                        <option value="Limpeza de Quintal">Limpeza de Quintal</option>
+                        <option value="Manutenção Residencial">Manutenção Residencial</option>
+                        <option value="Ajudante de Mudança">Ajudante de Mudança</option>
+                        <option value="Outro serviço">Outro serviço</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="categoria">Categoria</label>
+                    <select id="categoria" name="categoria" required>
+                        <option value="limpeza">Limpeza e diárias</option>
+                        <option value="reparos">Reparos residenciais</option>
+                        <option value="jardinagem">Jardinagem</option>
+                        <option value="fretes">Fretes e mudanças</option>
+                    </select>
+                </div>
+                <div class="field full-width">
+                    <label for="descricao">O que precisa ser feito?</label>
+                    <textarea id="descricao" name="descricao" rows="4" placeholder="Explique o trabalho, o tamanho do local e qualquer detalhe importante." required></textarea>
+                </div>
+                <div class="field full-width">
+                    <label for="local">Endereço do serviço</label>
+                    <input id="local" name="local" type="text" placeholder="Rua, número, bairro e cidade" required>
+                </div>
+                <div class="field">
+                    <label for="regiao">Estado</label>
+                    <select id="regiao" name="regiao" required>
+                        <option value="RO">Rondônia - RO</option>
+                        <option value="SP">São Paulo - SP</option>
+                        <option value="RJ">Rio de Janeiro - RJ</option>
+                        <option value="MG">Minas Gerais - MG</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="data">Data da diária</label>
+                    <input id="data" name="data" type="date" required>
+                </div>
+                <div class="field">
+                    <label for="pagamento">Valor combinado</label>
+                    <input id="pagamento" name="pagamento" type="text" placeholder="Ex: R$ 200" required>
+                </div>
+                <div class="field">
+                    <label for="contratante">Seu nome <span>(opcional)</span></label>
+                    <input id="contratante" name="contratante" type="text" placeholder="Pode publicar como anunciante">
+                </div>
+                <div class="field full-width">
+                    <label for="telefone">WhatsApp para contato</label>
+                    <input id="telefone" name="telefone" type="tel" placeholder="(69) 99999-9999" required>
+                </div>
+            </div>
+            <p id="publish-feedback" class="publish-feedback" aria-live="polite"></p>
+            <button type="submit" class="publish-button"><i class="fa-solid fa-bullhorn"></i> Publicar diária</button>
+        </form>
+    </main>
+
+    <script src="publicar-diaria.js"></script>
+</body>
+</html>

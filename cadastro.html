@@ -22,7 +22,9 @@
             
             <nav class="nav-links">
                 <a href="index.html">Início</a>
-                <a href="servicos.html">Serviços</a>
+                <a href="diarias.html">Encontrar Diárias</a>
+                <a href="servicos.html">Profissionais</a>
+                <a href="publicar-diaria.html">Publicar Diária</a>
                 <a href="comofunciona.html">Como Funciona</a>
             </nav>
 
@@ -49,30 +51,40 @@
             <div class="cadastro-form-card">
                 <h2>Crie seu Perfil Autônomo</h2>
                 
-                <form>
+                <form id="cadastro-form">
                     <div class="form-group">
-                        <label>Nome completo</label>
-                        <input type="text" placeholder="Ex: Roberto da Silva">
+                        <label for="nome">Nome completo</label>
+                        <input id="nome" name="nome" type="text" placeholder="Ex: Roberto da Silva" required>
                     </div>
 
                     <div class="form-group">
-                        <label>Endereço de atendimento</label>
-                        <input type="text" placeholder="Ex: Av. Paulista, 1000 - Bela Vista">
+                        <label for="endereco">Endereço de atendimento</label>
+                        <input id="endereco" name="endereco" type="text" placeholder="Ex: Av. Paulista, 1000 - Bela Vista" required>
                     </div>
 
                     <div class="form-group">
-                        <label>CEP do local de trabalho <span class="optional">(se houver)</span></label>
-                        <input type="text" placeholder="01310-100">
+                        <label for="cep">CEP do local de trabalho <span class="optional">(se houver)</span></label>
+                        <input id="cep" name="cep" type="text" placeholder="01310-100">
                     </div>
 
                     <div class="form-group">
-                        <label>Número de telefone (WhatsApp)</label>
-                        <input type="text" placeholder="(11) 99999-9999">
+                        <label for="telefone">Número de telefone (WhatsApp)</label>
+                        <input id="telefone" name="telefone" type="text" placeholder="(11) 99999-9999" required>
                     </div>
 
                     <div class="form-group">
-                        <label>Tipo de serviço principal</label>
-                        <select>
+                        <label for="email">E-mail</label>
+                        <input id="email" name="email" type="email" placeholder="seu@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="senha">Senha</label>
+                        <input id="senha" name="senha" type="password" minlength="6" placeholder="Mínimo de 6 caracteres" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="servico">Tipo de serviço principal</label>
+                        <select id="servico" name="servico" required>
                             <option value="" disabled selected>Selecione sua especialidade (Ex: Eletricista, Encanador...)</option>
                             <option value="eletricista">Eletricista</option>
                             <option value="encanador">Encanador</option>
@@ -92,6 +104,8 @@
                         </div>
                     </div>
 
+                    <div id="cadastro-message" class="cadastro-message" aria-live="polite"></div>
+
                     <button type="submit" class="btn-submit">Criar Minha Conta</button>
 
                     <div class="form-footer-link">
@@ -103,5 +117,6 @@
         </div>
     </main>
 
+    <script src="script.js"></script>
 </body>
 </html>

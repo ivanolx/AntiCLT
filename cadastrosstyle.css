@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #F8F6F0;
+    color: #1A1A1A;
+}
+
+.navbar {
+    background-color: #F8F6F0;
+    border-bottom: 1px solid #EAE6DF;
+    justify-content: flex-end;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 220px 1fr 220px;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #1A1A1A;
+}
+
+.logo-icon {
+    background-color: #FF5426;
+    color: white;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    padding-left: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nav-action {
+    display: flex;
+    align-items: center;
+}
+
+.btn-login,
+.btn-primary,
+.btn-edit,
+.btn-delete {
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-login,
+.btn-primary {
+    background-color: #FF5426;
+    color: white;
+    padding: 10px 18px;
+}
+
+.btn-primary:hover,
+.btn-login:hover,
+.btn-edit:hover,
+.btn-delete:hover {
+    filter: brightness(0.96);
+}
+
+.cadastros-main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px 40px;
+}
+
+.cadastros-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 16px;
+}
+
+.eyebrow {
+    color: #FF5426;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.cadastros-header h1 {
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.2;
+}
+
+.cadastros-card {
+    background: white;
+    border: 1px solid #EAE6DF;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+#cadastros-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#cadastros-table th,
+#cadastros-table td {
+    padding: 14px 12px;
+    text-align: left;
+    border-bottom: 1px solid #F0ECE7;
+    vertical-align: top;
+}
+
+#cadastros-table th {
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #6D695F;
+    background: #FBF9F5;
+}
+
+#cadastros-table td {
+    font-size: 14px;
+    color: #2F2F2F;
+}
+
+.cadastro-row-empty td {
+    color: #666;
+    font-style: italic;
+    padding: 28px 12px;
+    text-align: center;
+}
+
+.actions-cell {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-edit,
+.btn-delete {
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+.btn-edit {
+    background: #eef7ff;
+    color: #1a5db6;
+}
+
+.btn-delete {
+    background: #ffe8e3;
+    color: #b73920;
+}
+
+@media (max-width: 700px) {
+    .nav-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .nav-links {
+        padding-left: 0;
+        flex-wrap: wrap;
+    }
+
+    .cadastros-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

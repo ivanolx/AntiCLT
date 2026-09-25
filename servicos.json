@@ -24,7 +24,7 @@
     "regiao": "RJ",
     "local": "Lapa, RJ",
     "nota": 4.9,
-    "imagem": "https://images.unsplash.com/photo-1542013936693-84d4965e49c8?auto=format&fit=crop&q=80&w=600"
+    "imagem": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&q=80&w=600"
   },
   {
     "categoria": "pintura",
@@ -52,5 +52,59 @@
     "local": "Vila Mariana, RS",
     "nota": 4.9,
     "imagem": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=600"
+  },
+  {
+    "categoria": "limpeza",
+    "servico": "Dedetização Residencial",
+    "profissional": "Anderson F.",
+    "regiao": "RO",
+    "local": "Rua Abunã, 1842 - São Cristóvão, Porto Velho - RO",
+    "nota": 4.8,
+    "imagem": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=600"
+  },
+  {
+    "categoria": "limpeza",
+    "servico": "Lavagem de Caixa d'Água",
+    "profissional": "Roberto N.",
+    "regiao": "RO",
+    "local": "Rua Daniela, 235 - Aponiã, Porto Velho - RO",
+    "nota": 4.9,
+    "imagem": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&q=80&w=600"
+  },
+  {
+    "categoria": "limpeza",
+    "servico": "Limpeza de Piscina",
+    "profissional": "Paulo H.",
+    "regiao": "RO",
+    "local": "Avenida Calama, 3250 - Embratel, Porto Velho - RO",
+    "nota": 4.7,
+    "imagem": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=600"
+  },
+  {
+    "categoria": "reparos",
+    "servico": "Manutenção Residencial",
+    "profissional": "João V.",
+    "regiao": "RO",
+    "local": "Rua José Bonifácio, 910 - Centro, Porto Velho - RO",
+    "nota": 4.8,
+    "imagem": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=600"
+  },
+  {
+    "categoria": "jardinagem",
+    "servico": "Limpeza de Quintal",
+    "profissional": "Carlos R.",
+    "regiao": "RO",
+    "local": "Rua Raimundo Cantuária, 2875 - Agenor de Carvalho, Porto Velho - RO",
+    "nota": 4.9,
+    "imagem": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=600"
+  },
+  {
+    "categoria": "fretes",
+    "servico": "Ajudante de Mudança",
+    "profissional": "Felipe S.",
+    "regiao": "RO",
+    "local": "Rua Venezuela, 1460 - Nova Porto Velho, Porto Velho - RO",
+    "nota": 4.8,
+    "imagem": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=600"
   }
 ]

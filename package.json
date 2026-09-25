@@ -1,0 +1,26 @@
+{
+  "name": "site-anticlt",
+  "version": "1.0.0",
+  "description": "Markdown\r # AntiCLT",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanolx/AntiCLT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ivanolx/AntiCLT/issues"
+  },
+  "homepage": "https://github.com/ivanolx/AntiCLT#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "sqlite3": "^6.0.1"
+  }
+}
