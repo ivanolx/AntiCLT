@@ -139,6 +139,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             const cep = document.getElementById('cep')?.value.trim();
             const telefone = document.getElementById('telefone')?.value.trim();
             const servico = document.getElementById('servico')?.value;
+            const email = document.getElementById('email')?.value.trim();
+            const senha = document.getElementById('senha')?.value;
             const pessoaEditandoId = new URLSearchParams(window.location.search).get('editar');
 
             if (!nome || !endereco || !telefone || !servico) {
@@ -149,11 +151,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                 return;
             }
 
-            const payload = { nome, endereco, cep, telefone, servico };
+            const payload = { nome, endereco, cep, telefone, servico, email, senha };
 
             try {
                 const metodo = pessoaEditandoId ? 'PUT' : 'POST';
-                const url = pessoaEditandoId ? `/api/pessoas/${pessoaEditandoId}` : '/api/pessoas';
+                const url = pessoaEditandoId ? `/api/pessoas/${pessoaEditandoId}` : '/api/auth/register';
                 const resposta = await fetch(url, {
                     method: metodo,
                     headers: { 'Content-Type': 'application/json' },

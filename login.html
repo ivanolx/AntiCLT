@@ -24,7 +24,7 @@
         </div>
 
         <!-- Formulário de Login -->
-        <form class="login-form" action="#" method="POST">
+        <form id="login-form" class="login-form">
             <div class="input-group">
                 <label for="email">E-mail</label>
                 <div class="input-wrapper">
@@ -50,6 +50,7 @@
             </div>
 
             <button type="submit" class="btn-submit">Entrar</button>
+            <p id="login-message" class="form-message" aria-live="polite"></p>
         </form>
 
         <!-- Rodapé -->
@@ -58,6 +59,8 @@
             <a href="index.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> Voltar ao início</a>
         </div>
     </div>
+
+    <script src="login.js"></script>
 
 </body>
 </html>

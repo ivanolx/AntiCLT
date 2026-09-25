@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const sqlite3 = require('sqlite3').verbose();
+const crypto = require('crypto');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -75,13 +76,105 @@ function initializeDatabase() {
                             return;
                         }
 
-                        resolve();
+                        db.run(`
+                            CREATE TABLE IF NOT EXISTS usuarios (
+                                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                nome TEXT NOT NULL,
+                                email TEXT NOT NULL UNIQUE,
+                                senha TEXT NOT NULL,
+                                dataCadastro TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+                            )
+                        `, (usuarioError) => {
+                            if (usuarioError) {
+                                reject(usuarioError);
+                                return;
+                            }
+
+                            resolve();
+                        });
                     });
                 });
             });
         });
     });
 }
+
+function hashSenha(senha) {
+    return crypto.createHash('sha256').update(senha).digest('hex');
+}
+
+function validarCadastro(dados) {
+    const pessoa = validarPessoa(dados);
+    const email = String(dados.email || '').trim().toLowerCase();
+    const senha = String(dados.senha || '');
+
+    if (!pessoa || !email || senha.length < 6) {
+        return false;
+    }
+
+    return { ...pessoa, email, senha };
+}
+
+app.post('/api/auth/register', (req, res) => {
+    const cadastroValido = validarCadastro(req.body);
+
+    if (!cadastroValido) {
+        return res.status(400).json({ error: 'Preencha os campos e use uma senha com pelo menos 6 caracteres.' });
+    }
+
+    const { nome, endereco, cep, telefone, servico, email, senha } = cadastroValido;
+
+    db.run(
+        'INSERT INTO usuarios (nome, email, senha, dataCadastro) VALUES (?, ?, ?, ?)',
+        [nome, email, hashSenha(senha), new Date().toISOString()],
+        function (usuarioError) {
+            if (usuarioError) {
+                if (usuarioError.code === 'SQLITE_CONSTRAINT') {
+                    return res.status(409).json({ error: 'Este e-mail já está cadastrado.' });
+                }
+
+                return res.status(500).json({ error: 'Erro ao criar conta.' });
+            }
+
+            db.run(
+                'INSERT INTO pessoas (nome, endereco, cep, telefone, servico, dataCadastro) VALUES (?, ?, ?, ?, ?, ?)',
+                [nome, endereco, cep, telefone, servico, new Date().toISOString()],
+                (pessoaError) => {
+                    if (pessoaError) {
+                        return res.status(500).json({ error: 'Conta criada, mas não foi possível salvar o perfil.' });
+                    }
+
+                    res.status(201).json({ id: this.lastID, nome, email });
+                }
+            );
+        }
+    );
+});
+
+app.post('/api/auth/login', (req, res) => {
+    const email = String(req.body.email || '').trim().toLowerCase();
+    const senha = String(req.body.senha || '');
+
+    if (!email || !senha) {
+        return res.status(400).json({ error: 'Informe seu e-mail e sua senha.' });
+    }
+
+    db.get(
+        'SELECT id, nome, email FROM usuarios WHERE email = ? AND senha = ?',
+        [email, hashSenha(senha)],
+        (error, usuario) => {
+            if (error) {
+                return res.status(500).json({ error: 'Erro ao entrar na conta.' });
+            }
+
+            if (!usuario) {
+                return res.status(401).json({ error: 'E-mail ou senha incorretos.' });
+            }
+
+            res.json({ message: 'Login realizado com sucesso.', usuario });
+        }
+    );
+});
 
 function validarContato(dados) {
     const profissional = String(dados.profissional || '').trim();
