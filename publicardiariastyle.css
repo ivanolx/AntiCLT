@@ -22,7 +22,7 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 220px 1fr 220px;
     align-items: center;
     gap: 24px;
 }
@@ -43,6 +43,7 @@ body {
 .logo-icon {
     width: 28px;
     height: 28px;
+    justify-content: center;
     border-radius: 6px;
     display: flex;
     align-items: center;
@@ -53,7 +54,8 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 24px;
+    justify-content: center;
 }
 
 .nav-links a,
@@ -73,6 +75,12 @@ body {
     border-radius: 8px;
     background: #FF5426;
     color: white;
+}
+
+.nav-action {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .publish-page {

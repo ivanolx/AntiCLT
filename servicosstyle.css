@@ -30,7 +30,7 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 220px 1fr 220px;
     align-items: center;
     gap: 40px;
 }
@@ -58,9 +58,9 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 32px;
-    justify-content: flex-start;
-    padding-left: 40px;
+    gap: 24px;
+    justify-content: center;
+    padding-left: 0;
 }
 
 .nav-links a {
@@ -79,6 +79,7 @@ body {
     display: flex;
     gap: 12px;
     align-items: center;
+    justify-content: flex-end;
 }
 
 .btn-login {
