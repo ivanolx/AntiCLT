@@ -317,6 +317,144 @@ body {
     color: #f59e0b;
 }
 
+.contact-button {
+    width: 100%;
+    margin-top: 14px;
+    padding: 10px 12px;
+    border: 0;
+    border-radius: 8px;
+    background-color: #FF5426;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.contact-button:hover {
+    background-color: #e0451d;
+}
+
+.contact-button.contacted,
+.contact-button.contacted:hover {
+    background-color: #268a57;
+    cursor: default;
+}
+
+.contact-modal[hidden] {
+    display: none;
+}
+
+.contact-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.contact-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(17, 17, 17, 0.55);
+}
+
+.contact-modal-panel {
+    position: relative;
+    width: min(100%, 480px);
+    padding: 28px;
+    border-radius: 14px;
+    background: white;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.contact-modal-panel h2 {
+    margin-bottom: 6px;
+    color: #111;
+    font-size: 24px;
+}
+
+.contact-professional {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+.close-contact {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 50%;
+    background: #F5F2EC;
+    color: #555;
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 1;
+}
+
+#contact-form {
+    display: grid;
+    gap: 8px;
+}
+
+#contact-form label {
+    margin-top: 6px;
+    color: #333;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #EAE6DF;
+    border-radius: 8px;
+    outline: none;
+    color: #333;
+    font-size: 14px;
+    resize: vertical;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: #FF5426;
+}
+
+.send-contact {
+    margin-top: 8px;
+    padding: 12px;
+    border: 0;
+    border-radius: 8px;
+    background: #FF5426;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.send-contact:disabled {
+    cursor: wait;
+    opacity: 0.7;
+}
+
+.contact-feedback {
+    min-height: 20px;
+    font-size: 13px;
+}
+
+.contact-feedback.success {
+    color: #268a57;
+}
+
+.contact-feedback.error {
+    color: #c0392b;
+}
+
 /* CTA Banner Inferior */
 .cta-banner {
     background-color: #111;

@@ -37,11 +37,67 @@ function initializeDatabase() {
                     return;
                 }
 
-                resolve();
+                db.run(`
+                    CREATE TABLE IF NOT EXISTS contatos (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        profissional TEXT NOT NULL,
+                        servico TEXT NOT NULL,
+                        cliente TEXT NOT NULL,
+                        telefone TEXT NOT NULL,
+                        mensagem TEXT NOT NULL,
+                        dataContato TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+                    )
+                `, (contatoError) => {
+                    if (contatoError) {
+                        reject(contatoError);
+                        return;
+                    }
+
+                    resolve();
+                });
             });
         });
     });
 }
+
+function validarContato(dados) {
+    const profissional = String(dados.profissional || '').trim();
+    const servico = String(dados.servico || '').trim();
+    const cliente = String(dados.cliente || '').trim();
+    const telefone = String(dados.telefone || '').trim();
+    const mensagem = String(dados.mensagem || '').trim();
+
+    if (!profissional || !servico || !cliente || !telefone || !mensagem) {
+        return false;
+    }
+
+    return { profissional, servico, cliente, telefone, mensagem };
+}
+
+app.post('/api/contatos', (req, res) => {
+    const contatoValido = validarContato(req.body);
+
+    if (!contatoValido) {
+        return res.status(400).json({ error: 'Preencha todos os campos do contato.' });
+    }
+
+    const { profissional, servico, cliente, telefone, mensagem } = contatoValido;
+
+    db.run(
+        'INSERT INTO contatos (profissional, servico, cliente, telefone, mensagem, dataContato) VALUES (?, ?, ?, ?, ?, ?)',
+        [profissional, servico, cliente, telefone, mensagem, new Date().toISOString()],
+        function (error) {
+            if (error) {
+                return res.status(500).json({ error: 'Erro ao enviar contato.' });
+            }
+
+            res.status(201).json({
+                id: this.lastID,
+                message: 'Contato enviado com sucesso.'
+            });
+        }
+    );
+});
 
 function validarPessoa(dados) {
     const nome = String(dados.nome || '').trim();

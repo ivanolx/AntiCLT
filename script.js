@@ -7,6 +7,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const regionCheckboxes = document.querySelectorAll('.region-filter');
     const servicesGrid = document.getElementById('services-grid');
     const resultsCount = document.getElementById('results-count');
+    const contactModal = document.getElementById('contact-modal');
+    const contactForm = document.getElementById('contact-form');
+    const contactProfessional = document.getElementById('contact-professional');
+    const contactFeedback = document.getElementById('contact-feedback');
+    const closeContactButton = document.getElementById('close-contact');
+    let selectedContact = null;
+    let activeContactButton = null;
 
     function formatarData(dataIso) {
         if (!dataIso) return '—';
@@ -37,6 +44,69 @@ document.addEventListener('DOMContentLoaded', async () => {
     function salvarPessoasFallback(pessoas) {
         localStorage.setItem('anticltPessoas', JSON.stringify(pessoas));
     }
+
+    function fecharContato() {
+        if (contactModal) {
+            contactModal.hidden = true;
+        }
+    }
+
+    function abrirContato(service, button) {
+        if (!contactModal || !contactForm) return;
+
+        selectedContact = service;
+        activeContactButton = button;
+        contactForm.reset();
+        contactFeedback.textContent = '';
+        contactFeedback.className = 'contact-feedback';
+        contactProfessional.textContent = `${service.profissional} - ${service.servico}`;
+        contactModal.hidden = false;
+        document.getElementById('contact-name')?.focus();
+    }
+
+    closeContactButton?.addEventListener('click', fecharContato);
+    contactModal?.querySelector('[data-close-contact]')?.addEventListener('click', fecharContato);
+
+    contactForm?.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if (!selectedContact) return;
+
+        const dados = new FormData(contactForm);
+        const payload = {
+            profissional: selectedContact.profissional,
+            servico: selectedContact.servico,
+            cliente: dados.get('cliente'),
+            telefone: dados.get('telefone'),
+            mensagem: dados.get('mensagem')
+        };
+
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+
+        try {
+            const resposta = await fetch('/api/contatos', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            const resultado = await resposta.json().catch(() => ({}));
+
+            if (!resposta.ok) throw new Error(resultado.error || 'Não foi possível enviar o contato.');
+
+            contactFeedback.textContent = 'Contato enviado. O profissional poderá responder pelo WhatsApp informado.';
+            contactFeedback.className = 'contact-feedback success';
+            if (activeContactButton) {
+                activeContactButton.innerHTML = '<i class="fa-solid fa-check"></i> Contato enviado';
+                activeContactButton.classList.add('contacted');
+            }
+            contactForm.reset();
+        } catch (error) {
+            contactFeedback.textContent = error.message;
+            contactFeedback.className = 'contact-feedback error';
+        } finally {
+            submitButton.disabled = false;
+        }
+    });
 
     if (cadastroForm) {
         const editId = new URLSearchParams(window.location.search).get('editar');
@@ -227,7 +297,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         rating.append(service.nota);
 
         cardMeta.append(location, rating);
-        cardInfo.append(tag, professional, cardMeta);
+
+        const contactButton = document.createElement('button');
+        contactButton.type = 'button';
+        contactButton.className = 'contact-button';
+        contactButton.innerHTML = '<i class="fa-solid fa-comment-dots"></i> Contatar profissional';
+        contactButton.addEventListener('click', () => {
+            abrirContato(service, contactButton);
+        });
+
+        cardInfo.append(tag, professional, cardMeta, contactButton);
         card.append(cardImage, cardInfo);
 
         return card;
