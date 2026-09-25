@@ -53,7 +53,7 @@
 
             <div class="filter-group">
                 <h4>REGIÃO</h4>
-                <label class="checkbox-label"><input type="checkbox" class="region-filter" value="SP" checked> São Paulo - SP</label>
+                <label class="checkbox-label"><input type="checkbox" class="region-filter" value="SP"> São Paulo - SP</label>
                 <label class="checkbox-label"><input type="checkbox" class="region-filter" value="RJ"> Rio de Janeiro - RJ</label>
                 <label class="checkbox-label"><input type="checkbox" class="region-filter" value="MG"> Belo Horizonte - MG</label>
                 <label class="checkbox-label"><input type="checkbox" class="region-filter" value="RS"> Porto Alegre - RS</label>
@@ -64,16 +64,16 @@
         <main class="services-content-area">
             
             <!-- Campo de Busca Adicionado -->
-            <div class="search-box-container" style="margin-bottom: 20px;">
-                <div style="position: relative; max-width: 500px;">
-                    <input type="text" id="search-input" placeholder="Pesquise por serviço ou profissional..." style="width: 100%; padding: 12px 16px 12px 40px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem;">
-                    <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #888;"></i>
+            <div class="search-box-container">
+                <div class="service-search">
+                    <input type="text" id="search-input" placeholder="Buscar serviço ou profissional">
+                    <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </div>
 
             <div class="content-header">
                 <h2>Serviços Mais Buscados</h2>
-                <p id="results-count">Mostrando profissionais disponíveis perto de você</p>
+                <p id="results-count">Encontre profissionais disponíveis</p>
             </div>
 
             <!-- Os cards são carregados de servicos.json pelo JavaScript. -->
